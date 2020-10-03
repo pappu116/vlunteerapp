@@ -1,0 +1,11 @@
+.login-area {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  border: 1px solid #ddd;
+  padding: 10% 50px;
+  border-radius: 5px;
+}
+.login-area Button {
+  margin: 20px 0;
+}
