@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 import { CategoryContext, UserContext } from "../../App";
 import logo from "../../logos/Group 1329.png";
 import "./register.css";
@@ -12,7 +13,7 @@ const Register = () => {
   const { register, handleSubmit, watch, errors } = useForm();
   const onSubmit = (data) => {
     const newItem = { ...loggedInUser, ...data };
-    fetch("http://localhost:5000/addItem", {
+    fetch("https://blooming-refuge-67435.herokuapp.com/addItem", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newItem),
