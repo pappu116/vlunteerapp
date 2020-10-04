@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { Button, Nav, Navbar } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import { UserContext } from "../../../App";
 import Logo from "../../../logos/Group 1329.png";
 const NavBar = () => {
@@ -21,7 +22,9 @@ const NavBar = () => {
           {loggedInUser.email ? (
             <h4>{loggedInUser.name}</h4>
           ) : (
-            <Button>Admin</Button>
+            <Link to="/admin">
+              <Button>Admin</Button>
+            </Link>
           )}
         </Nav>
       </Navbar.Collapse>

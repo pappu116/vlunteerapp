@@ -4,14 +4,14 @@ import Item from "./Item/Item";
 const Home = () => {
   const [product, setProduct] = useState([]);
   useEffect(() => {
-    fetch("https://blooming-refuge-67435.herokuapp.com/items")
+    fetch("http://localhost:5000/items")
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, []);
   return (
     <Container>
       {product.map((pd) => (
-        <Item pd={pd}></Item>
+        <Item key={pd.id} pd={pd}></Item>
       ))}
     </Container>
   );

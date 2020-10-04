@@ -10,6 +10,7 @@ import { Container } from "react-bootstrap";
 import PrivateRoute from "./Component/PrivateRoute/PrivateRoute";
 import Login from "./Component/Login/login";
 import Register from "./Component/Register/Register";
+import Admin from "./Component/Admin/Admin";
 export const UserContext = createContext();
 export const CategoryContext = createContext();
 
@@ -37,6 +38,9 @@ function App() {
               </Route>
               <Route path="/donation">
                 <Donation />
+              </Route>
+              <Route path="/admin">
+                <Admin />
               </Route>
               <PrivateRoute path="/event">
                 <Event />
