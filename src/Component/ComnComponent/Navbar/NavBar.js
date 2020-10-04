@@ -13,17 +13,33 @@ const NavBar = () => {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="ml-auto" variant="dark">
-          <Nav.Link href="/home">Home</Nav.Link>
-          <Nav.Link href="/donation">Domnation</Nav.Link>
-          <Nav.Link href="/event">Event</Nav.Link>
-          <Nav.Link href="#pricing">Blog</Nav.Link>
+          <Nav.Link>
+            <Link to="/home">Home</Link>
+          </Nav.Link>
+          <Nav.Link>
+            <Link to="/donation">Donation</Link>
+          </Nav.Link>
+          <Nav.Link>
+            <Link to="/event">Event</Link>
+          </Nav.Link>
+          <Nav.Link>
+            <Link to="/register">
+              {loggedInUser.email ? (
+                <Button variant="primary" style={{ display: "none" }}>
+                  Register
+                </Button>
+              ) : (
+                <Button variant="primary">Register</Button>
+              )}
+            </Link>
+          </Nav.Link>
         </Nav>
         <Nav>
           {loggedInUser.email ? (
             <h4>{loggedInUser.name}</h4>
           ) : (
             <Link to="/admin">
-              <Button>Admin</Button>
+              <Button variant="secondary">Admin</Button>
             </Link>
           )}
         </Nav>

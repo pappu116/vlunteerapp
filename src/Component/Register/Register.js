@@ -13,7 +13,7 @@ const Register = () => {
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
     const newItem = { ...loggedInUser, ...data, ...category };
-    fetch("http://localhost:5000/addItem", {
+    fetch("https://blooming-refuge-67435.herokuapp.com/addItem", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newItem),

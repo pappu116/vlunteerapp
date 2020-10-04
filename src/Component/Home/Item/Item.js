@@ -6,6 +6,7 @@ import "./Item.css";
 const Item = (props) => {
   const [category, setCategory] = useContext(CategoryContext);
   const { name, id, img } = props.pd;
+
   return (
     <div className="display">
       <Link to="/register">

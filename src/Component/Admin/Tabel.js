@@ -6,14 +6,14 @@ import Bar from "../ComnComponent/Bar/Bar";
 const Tabel = () => {
   const [item, setItem] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/allUser")
+    fetch("https://blooming-refuge-67435.herokuapp.com/allUser")
       .then((res) => res.json())
       .then((data) => setItem(data));
   }, []);
 
   // deledetd code start
   const handelDelet = (email) => {
-    fetch(`http://localhost:5000/delete/${email}`, {
+    fetch(`https://blooming-refuge-67435.herokuapp.com/delete/${email}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

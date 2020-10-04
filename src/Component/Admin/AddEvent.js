@@ -2,13 +2,14 @@ import React, { useContext } from "react";
 import { Button, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { UserContext } from "../../App";
+import Bar from "../ComnComponent/Bar/Bar";
 import "./addevent.css";
 const AddEvent = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
     const newItem = { ...loggedInUser, ...data };
-    fetch("http://localhost:5000/adminAdded", {
+    fetch("https://blooming-refuge-67435.herokuapp.com/adminAdded", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newItem),
@@ -21,6 +22,7 @@ const AddEvent = () => {
 
   return (
     <>
+      <Bar name="AddEvent" />
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="formstyle">
           <div>
