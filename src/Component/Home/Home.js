@@ -23,12 +23,12 @@ const Home = () => {
         <InputGroup className="mb-3">
           <input
             style={inputStyle}
-            placeholder="Recipient's username"
+            placeholder="Search..."
             aria-label="Recipient's username"
             aria-describedby="basic-addon2"
           />
           <InputGroup.Append>
-            <Button variant="outline-secondary">Button</Button>
+            <Button variant="outline-primary">Search</Button>
           </InputGroup.Append>
         </InputGroup>
       </div>
