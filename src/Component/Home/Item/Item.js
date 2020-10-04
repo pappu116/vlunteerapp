@@ -6,7 +6,16 @@ import "./Item.css";
 const Item = (props) => {
   const [category, setCategory] = useContext(CategoryContext);
   const { name, id, img } = props.pd;
-
+  const colo = [
+    "Primary",
+    "Secondary",
+    "Success",
+    "Danger",
+    "Warning",
+    "Info",
+    "Light",
+    "Dark",
+  ];
   return (
     <div className="display">
       <Link to="/register">
