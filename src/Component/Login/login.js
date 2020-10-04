@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import * as firebase from "firebase/app";
 import "firebase/auth";
 import { Button } from "react-bootstrap";
-
+import Logo from "../../logos/Group 1329.png";
 import "./login.css";
 import Google from "../../logos/google.png";
 import { useHistory, useLocation } from "react-router-dom";
@@ -12,6 +12,7 @@ firebase.initializeApp(firebaseConfig);
 
 const Login = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+
   //redirect path code private route
   const history = useHistory();
   const location = useLocation();
@@ -45,21 +46,24 @@ const Login = () => {
   };
 
   return (
-    <div className="login-area">
-      <h2>Login With</h2>
-      <Button
-        style={{ borderRadius: "50px" }}
-        onClick={googleloggedin}
-        variant="secondary"
-        size="lg"
-        block
-      >
-        <img height="40px" src={Google} alt="" />
-        <span>Continew with Google</span>
-      </Button>
-      <p>
-        Don't have an account? <a href="#">Create an account</a>{" "}
-      </p>
+    <div className="container">
+      <img style={{ height: "80px" }} src={Logo} alt="" />
+      <div className="login-area">
+        <h2>Login With</h2>
+        <Button
+          style={{ borderRadius: "50px" }}
+          onClick={googleloggedin}
+          variant="secondary"
+          size="lg"
+          block
+        >
+          <img height="40px" src={Google} alt="" />
+          <span>Continew with Google</span>
+        </Button>
+        <p>
+          Don't have an account? <a href="#">Create an account</a>{" "}
+        </p>
+      </div>
     </div>
   );
 };

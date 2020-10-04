@@ -1,6 +1,7 @@
 import React from "react";
 import logo from "../../logos/users-alt 1.png";
 import plus from "../../logos/plus 1.png";
+import Logo2 from "../../logos/Group 1329.png";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Tabel from "./Tabel";
 import AddEvent from "./AddEvent";
@@ -24,11 +25,13 @@ const Admin = () => {
         <div
           style={{
             padding: "10px",
-            width: "40%",
-            background: "#f0f0f0",
+            width: "30%",
+            height: "100vh",
+            background: "#FFFFFF",
           }}
         >
-          <ul style={{ listStyleType: "none", padding: 0 }}>
+          <img src={Logo2} style={{ height: "40px" }} alt="" />
+          <ul style={{ listStyleType: "none", padding: 0, marginTop: "40px" }}>
             <li>
               <Link to="/tabel">
                 <img src={logo} style={{ height: "20px" }} alt="" /> Volunter

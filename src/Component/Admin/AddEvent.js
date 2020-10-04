@@ -26,11 +26,11 @@ const AddEvent = () => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="formstyle">
           <div>
-            <label htmlFor="title">Event Title</label>
+            <label htmlFor="name">Event Title</label>
 
             <input
               className="controls"
-              name="title"
+              name="name"
               defaultValue="Title"
               type="text"
               ref={register}

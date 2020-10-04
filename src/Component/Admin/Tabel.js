@@ -39,16 +39,16 @@ const Tabel = () => {
           </tr>
         </thead>
         <tbody>
-          {item.map((prd) => (
-            <tr key={prd._id}>
-              <td>{prd.fullName}</td>
-              <td>{prd.email}</td>
-              <td>{prd.date}</td>
-              <td>{prd.volunteerName}</td>
+          {item.map((itm) => (
+            <tr key={itm._id}>
+              <td>{itm.fullName}</td>
+              <td>{itm.email}</td>
+              <td>{itm.date}</td>
+              <td>{itm.volunteerName}</td>
               <td>
                 <img
                   src={logo}
-                  onClick={() => handelDelet(prd.email)}
+                  onClick={() => handelDelet(itm.email)}
                   style={{
                     height: "30px",
                     background: "red",

@@ -3,8 +3,9 @@ import { Button, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../../App";
 import Logo from "../../../logos/Group 1329.png";
-const NavBar = () => {
+const NavBar = (props) => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+
   return (
     <Navbar collapseOnSelect expand="lg">
       <Navbar.Brand href="#home">
@@ -14,7 +15,7 @@ const NavBar = () => {
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="ml-auto" variant="dark">
           <Nav.Link>
-            <Link to="/home">Home</Link>
+            <Link to="/">Home</Link>
           </Nav.Link>
           <Nav.Link>
             <Link to="/donation">Donation</Link>

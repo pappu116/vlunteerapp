@@ -68,7 +68,7 @@ const Register = () => {
           />
           <br />
           <Button
-            style={{ width: "60%", margin: "0 auto" }}
+            style={{ width: "80%", margin: "0 auto" }}
             type="submit"
             size="lg"
             block

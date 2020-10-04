@@ -18,11 +18,10 @@ function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
   const [category, setCategory] = useState({});
   return (
-    <Container>
+    <Container className="App-area">
       <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
         <CategoryContext.Provider value={[category, setCategory]}>
           <Router>
-            <NavBar />
             <Switch>
               <Route exact path="/">
                 <Home />
@@ -33,7 +32,7 @@ function App() {
               <PrivateRoute path="/register">
                 <Register />
               </PrivateRoute>
-              <Route path="/login">
+              <Route path="/login" component={Login}>
                 <Login />
               </Route>
               <Route path="/donation">

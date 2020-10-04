@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Button, Card } from "react-bootstrap";
 import { UserContext } from "../../App";
+import NavBar from "../ComnComponent/Navbar/NavBar";
 
 const Event = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
@@ -35,30 +36,37 @@ const Event = () => {
   };
 
   return (
-    <div
-      style={{
-        background: "#F8FAFC",
-        display: "flex",
-        gridGap: "2rem",
-        marginTop: "40px",
-      }}
-    >
-      {item.map((itm) => (
-        <Card style={{ width: "30rem" }}>
-          <div style={cardStyle}>
-            <Card.Img style={{ width: "170px" }} variant="top" src={itm.img} />
-            <Card.Body>
-              <Card.Title>{itm.volunteerName}</Card.Title>
-              <Card.Text>{itm.date}</Card.Text>
+    <>
+      <NavBar />
+      <div
+        style={{
+          background: "#F8FAFC",
+          display: "flex",
+          gridGap: "2rem",
+          marginTop: "40px",
+        }}
+      >
+        {item.map((itm) => (
+          <Card style={{ width: "30rem" }}>
+            <div style={cardStyle}>
+              <Card.Img
+                style={{ width: "170px" }}
+                variant="top"
+                src={itm.img}
+              />
+              <Card.Body>
+                <Card.Title>{itm.volunteerName}</Card.Title>
+                <Card.Text>{itm.date}</Card.Text>
 
-              <Button variant="primary" onClick={() => deletedItem(itm._id)}>
-                Cancel
-              </Button>
-            </Card.Body>
-          </div>
-        </Card>
-      ))}
-    </div>
+                <Button variant="primary" onClick={() => deletedItem(itm._id)}>
+                  Cancel
+                </Button>
+              </Card.Body>
+            </div>
+          </Card>
+        ))}
+      </div>
+    </>
   );
 };
 
