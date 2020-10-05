@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Card } from "react-bootstrap";
+import { Card, Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { CategoryContext } from "../../../App";
 import "./Item.css";
@@ -16,12 +16,20 @@ const Item = (props) => {
           }}
           onClick={() => setCategory(props.pd)}
         >
-          <Card.Img variant="top" src={img} />
-          <Card.Body className="cardbody">
-            <Card.Title>{name}</Card.Title>
-          </Card.Body>
+          <img className="image" src={img} alt="" />
+          <h4
+            className="overlay"
+            style={{
+              backgroundColor: `#${Math.floor(
+                Math.random() * 16777215
+              ).toString(16)}`,
+            }}
+          >
+            {name}
+          </h4>
         </Card>
       </Link>
+
       <br />
     </div>
   );

@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Button, Card } from "react-bootstrap";
+import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import { UserContext } from "../../App";
 import NavBar from "../ComnComponent/Navbar/NavBar";
 
@@ -33,39 +33,44 @@ const Event = () => {
   const cardStyle = {
     background: "#FFFFFF",
     display: "flex",
+    borderRadius: "5px",
   };
 
   return (
     <>
       <NavBar />
-      <div
-        style={{
-          background: "#F8FAFC",
-          display: "flex",
-          gridGap: "2rem",
-          marginTop: "40px",
-        }}
-      >
-        {item.map((itm) => (
-          <Card style={{ width: "30rem" }}>
-            <div style={cardStyle}>
-              <Card.Img
-                style={{ width: "170px" }}
-                variant="top"
-                src={itm.img}
-              />
-              <Card.Body>
-                <Card.Title>{itm.volunteerName}</Card.Title>
-                <Card.Text>{itm.date}</Card.Text>
 
-                <Button variant="primary" onClick={() => deletedItem(itm._id)}>
-                  Cancel
-                </Button>
-              </Card.Body>
-            </div>
-          </Card>
-        ))}
-      </div>
+      <Container>
+        <Row style={{ marginTop: "50px" }}>
+          {item.map((itm) => (
+            <Col md={6}>
+              <div style={cardStyle}>
+                <img
+                  style={{ height: "200px", padding: "10px" }}
+                  src={itm.img}
+                  alt=""
+                />
+                <div style={{ padding: "10px" }}>
+                  <h4>{itm.name}</h4>
+                  <p>{itm.date}</p>
+                  <Button
+                    style={{
+                      position: "absolute",
+                      right: "10%",
+                      bottom: "20%",
+                    }}
+                    variant="primary"
+                    onClick={() => deletedItem(itm._id)}
+                  >
+                    Cancel
+                  </Button>
+                </div>
+              </div>
+              <br />
+            </Col>
+          ))}
+        </Row>
+      </Container>
     </>
   );
 };
