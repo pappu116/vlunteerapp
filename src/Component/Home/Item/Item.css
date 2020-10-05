@@ -2,3 +2,7 @@
   display: inline-block;
   text-align: center;
 }
+.cardbody {
+  background-color: #007bff;
+  color: #fff;
+}

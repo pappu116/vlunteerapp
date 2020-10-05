@@ -22,7 +22,7 @@ const Register = () => {
       .then((data) => {
         console.log(data);
       });
-    history.push("/event");
+    history.replace("/event");
   };
 
   return (

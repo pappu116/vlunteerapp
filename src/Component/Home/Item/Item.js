@@ -6,7 +6,6 @@ import "./Item.css";
 const Item = (props) => {
   const [category, setCategory] = useContext(CategoryContext);
   const { name, id, img } = props.pd;
-
   return (
     <div className="display">
       <Link to="/register">
@@ -14,13 +13,11 @@ const Item = (props) => {
           style={{
             width: "14rem",
             margin: "10px",
-            background: "#421FCF",
-            color: "#fff",
           }}
           onClick={() => setCategory(props.pd)}
         >
           <Card.Img variant="top" src={img} />
-          <Card.Body>
+          <Card.Body className="cardbody">
             <Card.Title>{name}</Card.Title>
           </Card.Body>
         </Card>

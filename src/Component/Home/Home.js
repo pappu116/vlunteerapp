@@ -14,7 +14,6 @@ const Home = () => {
     width: "40%",
     marginLeft: "26%",
   };
-
   return (
     <Container>
       <NavBar />
