@@ -6,6 +6,11 @@ import "./Item.css";
 const Item = (props) => {
   const [category, setCategory] = useContext(CategoryContext);
   const { name, id, img } = props.pd;
+  const generateRandomColor = () => {
+    var randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+    return randomColor;
+    //random color will be freshly served
+  };
   return (
     <div className="display">
       <Link to="/register">
@@ -20,9 +25,12 @@ const Item = (props) => {
           <h4
             className="overlay"
             style={{
-              backgroundColor: `#${Math.floor(
+              backgroundColor: generateRandomColor(),
+
+              /*or if u want to random color inline function use it*/
+              /*backgroundColor: `#${Math.floor(
                 Math.random() * 16777215
-              ).toString(16)}`,
+              ).toString(16)}`,*/
             }}
           >
             {name}
