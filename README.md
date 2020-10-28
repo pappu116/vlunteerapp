@@ -23,7 +23,6 @@
 - React.js
 - firebase
 - react-router-dom
-- react-owl-carousel
 - react-hook-form
 - react-dom
 - react-bootstrap
