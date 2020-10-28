@@ -16,6 +16,7 @@
 - 👉 User Red/watch Order
 - 👉 Private Page/Protected Page
 - 👉 Email identify user red product
+- 👉Admin Added Product
 
 ## Uses Library or Fram works
 
